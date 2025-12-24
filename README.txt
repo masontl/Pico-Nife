@@ -56,5 +56,30 @@ Through a continuous learning process, this project showcases my ability to gras
 While open-source, the niche nature of the application and target audience limits potential contributors.
 The project serves as a valuable learning experience and demonstrates problem-solving skills.
 
-Challenges faced:
+
+Technical Challenges & Solutions: The "Pico Nife" Development
+
+-Platform Scalability & Memory Management:
+  -Challenge: Initial development on the Arduino Uno (ATmega328P) exceeded flash memory and SRAM limits due to the complex multi-product menu system.
+    -Solution: Migrated the project to the RP2040 (Raspberry Pi Pico), providing ample headroom for extensive string handling and future features.
+
+-Dual-Environment Simulation & Firmware Branching:
+  -Challenge: Need for pre-deployment verification without physical hardware access. Wokwi supported the RP2040 but lacked advanced circuit simulation, while SimulIDE lacked RP2040 support but offered better hardware modeling.
+    -Solution: Created a modular codebase with branching logic to support both the Arduino Mega (for SimulIDE testing) and the RP2040 (for physical deployment). Developed a "Mock Unit" using an Arduino Nano within SimulIDE to mimic the serial responses of a Model 9414, enabling full end-to-end logic verification in a virtual environment.
+
+-Model-Specific Power Management (High-Side Switching):
+  -Challenge: The 12VDC rail required for transducers posed a potential risk or unnecessary load when communicating with other supported hardware (Models 9414, 9424, 9250). The system needed to distinguish between device types to ensure the buck converter was only active during specific transducer operations.
+    -Solution: Developed a menu-driven power logic using a PNP transistor as a high-side switch. By tying the transistor’s state to the firmware’s menu selection, I ensured the 12VDC buck converter only energized when the "Transducer" sub-menu was active. This prevented cross-model voltage issues and optimized the device’s thermal and power profile during standard 9414/9424/9250 operations.
+
+-Signal Protocol Adaptation (RS232 to RS485/422):
+  -Challenge: Interfacing with "universal" transducers that could switch between RS232 and RS485 without damaging the microcontroller's UART pins.
+    -Solution: Designed a physical DB9 jumper system to re-pin signals on the fly. Utilized a half-duplex RS422 configuration by electrically jumpering TX- to GND, allowing for safe, reliable communication across multiple protocols without requiring complex active switching circuitry.
+
+-UI/UX Constraints (LCD Optimization):
+  -Challenge: The 20x4 I2C LCD had significant character limits for detailed industrial instructions.
+    -Solution: Developed a custom text-scrolling algorithm that managed character arrays to display long-form data at human-readable rates, ensuring the user interface remained intuitive despite physical hardware constraints.
+
+-AI-Assisted Iterative Development:
+  -Challenge: Rapidly prototyping complex serial handshaking and menu logic.
+    -Solution: Leveraged AI Collaboration (Google's Bard) as a pair-programmer to generate and refine code snippets, which were then manually audited, integrated, and optimized for the specific hardware target.
 
