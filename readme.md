@@ -7,7 +7,7 @@
 ## 📺 Project Demonstration
 Watch the Pico Nife interfacing with hardware in a live shop environment.
 
-![Pico Nife in Action](Pictures/Video_Example.mp4)
+![Pico Nife in Action](Pictures/LCD_Scrolling_Video.mp4)
 
 ---
 
