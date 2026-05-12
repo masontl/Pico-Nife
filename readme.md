@@ -1,11 +1,11 @@
 # P.I.C.O. N.I.F.E. 
 ### (Portable Interface & Communication Operator)
-**Industrial-grade handheld tool designed for high-reliability device calibration and communication.**
+**Industrial-grade handheld tool designed for high-reliability device address setting and communication.**
 
 ---
 
 ## 📺 Project Demonstration
-Watch the Pico Nife interfacing with hardware in a live shop environment.
+Watch the Pico Nife scrolling through text in a human-readable way.
 
 ![Pico Nife in Action](Pictures/LCD_Scrolling_Video.mp4)
 
@@ -14,13 +14,13 @@ Watch the Pico Nife interfacing with hardware in a live shop environment.
 ## 🛠 Hardware & Simulation Gallery
 
 ### Physical Build
-| Handheld Unit | Interface Logic | Hardware Internals |
+| Completed Units | Interface Cable | Backlit 20x4 LCD Screen  |
 | :---: | :---: | :---: |
 | ![Unit](Pictures/PXL_20240226_121039711.MP.jpg) | ![Interface](Pictures/PXL_20240226_120728440.MP.jpg) | ![Internals](Pictures/PXL_20240226_120741423.MP.jpg) |
-| *Final Assembly* | *20x4 LCD UI* | *RP2040 Integration* |
+| *Final Assembly* | *DB9 Serial cable for M and F connections* | *RP2040 Integration and LCD initial menu screen* |
 
 ### Digital Twin & Logic Verification (SimulIDE)
-| Circuit Layout | Logic Testing | Serial Mocking | Path Verification |
+| Circuit Layout | Recieving Info from Transducer | Use Case of Lack of Return Communication | SN and Date Setting Interface |
 | :---: | :---: | :---: | :---: |
 | ![Circuit](Screenshots/simulIDE/croppedScreenshot%20(22).png) | ![Logic](Screenshots/simulIDE/croppedScreenshot%20(26).png) | ![Serial](Screenshots/simulIDE/croppedScreenshot%20(27).png) | ![Path](Screenshots/simulIDE/croppedScreenshot%20(39).png) |
 
